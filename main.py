@@ -26,7 +26,13 @@ def kryziukai(n):
     print(y)
     print(z)
 
+def sumuojamX(n):
+    eil1 =
+    ...
 
-kryziukai(9)
+def sumuojamO(n):
+    ...
+# bus 8 sumos
+kryziukai(0)
 n = input()
 
