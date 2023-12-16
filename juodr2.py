@@ -1,6 +1,7 @@
 #
 #
 #
+import sys
 
 m = [[7,8,9],[4,5,6],[1,2,3]]
 zaidejasx = "x"
@@ -20,17 +21,21 @@ def masyvopic(m):
     for y in m:
         print(y)
 
-def tikrinam (z):
-    if z != "x" and z != "o":
+def tikrinam (z, a1, b1, zai):
+    if z[a1][b1] != "x" and z[a1][b1] != "o":
+        z[a1][b1] = zai
+        #masyvopic(z)
         return True
     else:
         print("vieta jau pazymeta")
-        return True
-
-def tikrinam2 (masel, zai):
-    if tikrinam(masel):
-        masel = zai
+        #masyvopic(z)
         return False
+
+def tikrinam2 (masel, a, b, zai):
+    if tikrinam(masel, a, b) == True:
+        masel[a][b] = zai
+        masyvopic(masel)
+        return (False, masel)
     else:
         return True
 
@@ -40,20 +45,18 @@ def ivedimas(zaid):
         match input("Iveskite  1-9\n"):
             case "1":
                 print("ivedei 1")
-                #masyvopic(m)
-                if tikrinam(m[2][0]):
-                    m[2][0] = zaid
-                    return False
-                else:
-                    return True
+                if tikrinam(m, 2,0, zaid) == True:
+                    break
                 #masyvopic(m)
             case "2":
                 print("ivedei 2")
-                tikrinam2(m[2][1], zaid)
+                if tikrinam(m,2,1, zaid) == True:
+                    break
                 #masyvopic(m)
             case "3":
                 print("ivedei 3")
-                m[2][2] = zaid
+                if tikrinam(m,2,2, zaid) == True:
+                    break
                 #masyvopic(m)
             case "4":
                 print("ivedei 4")
@@ -79,11 +82,12 @@ def ivedimas(zaid):
                 print("ivedei 9")
                 m[0][2] = zaid
                 #masyvopic(m)
-            case "":
-                return False
+            case "\27":
+                return exit()
+                #sys.exit()
             case _:
                 print("ne ta ivedei")
-                return True
+                continue
 
 while True:
     print("zaidejo X ejimas:")
