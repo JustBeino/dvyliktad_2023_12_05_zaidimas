@@ -7,16 +7,36 @@ m = [[7, 8, 9],[4, 5, 6],[1, 2, 3]]
 zaidejasx = "x"
 zaidejaso = "o"
 
-sumos1eil = (m[0][0], m[0][1], m[0][2])     #eilute
-sumos2eil = (m[1][0], m[1][1], m[1][2])     #eilute
-sumos3eil = (m[2][0], m[2][1], m[2][2])     #eilute
-sumos4eil = (m[0][0], m[1][0], m[2][0])     #stulpelis
-sumos5eil = (m[0][1], m[1][1], m[2][1])     #stulpelis
-sumos6eil = (m[0][2], m[1][2], m[2][2])     #stulpelis
-sumos7eil = (m[0][0], m[1][1], m[2][2])     #istrizaine
-sumos8eil = (m[2][0], m[1][1], m[0][2])     #istrizaine
+def sumuojam(m, zaid):
+    suma = 0
+    for x in m:
+        if x == zaid:
+            suma += 1
+    #print(suma)
+    return suma
+def arlaimejo(m, zaid):      #def sumuojam(m):
+    sumos1eil = (m[0][0], m[0][1], m[0][2])     #eilute
+    sumos2eil = (m[1][0], m[1][1], m[1][2])     #eilute
+    sumos3eil = (m[2][0], m[2][1], m[2][2])     #eilute
+    sumos4eil = (m[0][0], m[1][0], m[2][0])     #stulpelis
+    sumos5eil = (m[0][1], m[1][1], m[2][1])     #stulpelis
+    sumos6eil = (m[0][2], m[1][2], m[2][2])     #stulpelis
+    sumos7eil = (m[0][0], m[1][1], m[2][2])     #istrizaine
+    sumos8eil = (m[2][0], m[1][1], m[0][2])     #istrizaine
 
-sumu_listas = (sumos1eil, sumos2eil, sumos3eil, sumos4eil, sumos5eil, sumos6eil, sumos7eil, sumos8eil)
+    sumu_listas = (sumos1eil, sumos2eil, sumos3eil, sumos4eil, sumos5eil, sumos6eil, sumos7eil, sumos8eil)
+
+    for x in sumu_listas:
+        n = sumuojam(x, zaid)
+        if n == 3:
+            print(f"Zaidejas {zaid} laimejo")
+            return True  # exit()
+
+                #print(suma)
+            #print(zaid, n)
+            #return False
+    # print(suma)
+    #return suma
 def masyvopic(m):
 #    for y in m:        #padarysim graziau
 #        print(f" {y} ")
@@ -24,6 +44,15 @@ def masyvopic(m):
     print(f"  {m[1][0]}  {m[1][1]}  {m[1][2]}")
     print(f"  {m[2][0]}  {m[2][1]}  {m[2][2]}")
 
+"""
+def sumuojam(slel):
+    suma = 0
+    for x in slel:
+        if x == "x":
+            suma += 1
+    #print(suma)
+    return suma
+"""
 def tikrinam (z, a1, b1, zai):
     if z[a1][b1] != "x" and z[a1][b1] != "o":
         z[a1][b1] = zai
@@ -33,7 +62,15 @@ def tikrinam (z, a1, b1, zai):
         print("vieta jau pazymeta")
         #masyvopic(z)
         return False
-
+def arlaimejoX(m,zaid):
+    for x in sumu_listas:
+        n = sumuojam(m)
+        if n == 3:
+            print(f"{zaid} laimejo")
+            return True #exit()
+        else:
+            return False
+            #print(f"{zaid} dar nelaimejo")
 """
 def tikrinam2 (masel, a, b, zai):
     if tikrinam(masel, a, b) == True:
@@ -102,13 +139,22 @@ def ivedimas(zaid):
                 continue
 
 while True:
-    print("------------------\nDabar zaidejo X ejimas")
+    print("-----------------------\nDabar zaidejo X ejimas")
     ivedimas(zaidejasx)
     masyvopic(m)
-    print("------------------\nDabar zaidejo O ejimas")
+    #print(sumos1eil)
+    if arlaimejo(m,zaidejasx) == True:
+        break
+    #for x in sumu_listas:
+    #    print(x, sumuojam(x))
+    #if arlaimejoX(zaidejasx) == True:
+    #    break
+    print("-----------------------\nDabar zaidejo O ejimas")
     ivedimas(zaidejaso)
     masyvopic(m)
-
+    if arlaimejo(m,zaidejaso) == True:
+        break
+    # lygiosios cia bus
 
 
 

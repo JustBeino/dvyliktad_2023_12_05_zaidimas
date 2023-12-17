@@ -56,7 +56,7 @@ def arlaimejoX(m):
 def arlygiosios(z):
     lsuma = 0
     for x in z:
-        if x == "x" or x =="o":
+        if x == "x" or x == "o":
             lsuma += 1
     if lsuma == 9:
         print("lygiosios")
