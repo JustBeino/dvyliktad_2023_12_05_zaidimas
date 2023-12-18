@@ -7,14 +7,14 @@ m = [[7, 8, 9],[4, 5, 6],[1, 2, 3]]
 zaidejasx = "x"
 zaidejaso = "o"
 
-def sumuojam(masel, zaid):  # cia bus perduota sumos*eil
+def sumuojam(maseil, zaid):  # cia bus perduota sumos*eil
     suma = 0
-    for x in masel:
+    for x in maseil:
         if x == zaid:
             suma += 1
     #print(suma)
     return suma
-def arlaimejo(m, zaid):      #def sumuojam(m):
+def arlaimejo(m, zaid):      
     sumos1eil = (m[0][0], m[0][1], m[0][2])     #eilute
     sumos2eil = (m[1][0], m[1][1], m[1][2])     #eilute
     sumos3eil = (m[2][0], m[2][1], m[2][2])     #eilute
@@ -62,6 +62,7 @@ def tikrinam (z, a1, b1, zai):
         print("vieta jau pazymeta")
         #masyvopic(z)
         return False
+"""
 def arlaimejoX(m,zaid):
     for x in sumu_listas:
         n = sumuojam(m)
@@ -71,6 +72,7 @@ def arlaimejoX(m,zaid):
         else:
             return False
             #print(f"{zaid} dar nelaimejo")
+"""
 """
 def tikrinam2 (masel, a, b, zai):
     if tikrinam(masel, a, b) == True:
@@ -149,6 +151,8 @@ def arlygiosios(mas):
         return False
     else:
         return True     #kad neiseitu is ciklo while
+
+
 print("zaidimas Kryziukai Nuliukai\n-----------------------")
 masyvopic(m)
 while True:
