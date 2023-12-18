@@ -1,5 +1,5 @@
 """
-Užduotis: kryžiukų nuliukų žaidimas (Tic Tac Toe)
+Užduotis: kryžiukų nuliukų žaidimas (Tic Tac Toe),
 
 Sukurti kryžiukų/nuliukų žaidimą, kuris:
 Leistų žaisti dviems žaidėjams (X ir O)
@@ -15,7 +15,7 @@ Kad žaidimas skaičiuotų abiejų žaidėjų sesijos laimėjimus.
 Leistų žaisti prieš kompiuterį (sukurti logiką, kaip jis elgsis)
 Padaryti GUI (su tkinter, pygame, dar kažkuo)
 """
-"""
+"""     main faile programa, kitur juodrasciai taisymui/pakeitimams
 8 sumos laimejimui skaiciuoti
 padarytas ivedimas su klaidu tikrinimu
 ivedimas - keicia masyva
