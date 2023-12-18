@@ -7,9 +7,9 @@ m = [[7, 8, 9],[4, 5, 6],[1, 2, 3]]
 zaidejasx = "x"
 zaidejaso = "o"
 
-def sumuojam(m, zaid):
+def sumuojam(masel, zaid):  # cia bus perduota sumos*eil
     suma = 0
-    for x in m:
+    for x in masel:
         if x == zaid:
             suma += 1
     #print(suma)
@@ -29,7 +29,7 @@ def arlaimejo(m, zaid):      #def sumuojam(m):
     for x in sumu_listas:
         n = sumuojam(x, zaid)
         if n == 3:
-            print(f"Zaidejas {zaid} laimejo")
+            print(f"******************\nZaidejas {zaid} laimejo\n******************")
             return True  # exit()
 
                 #print(suma)
@@ -137,7 +137,20 @@ def ivedimas(zaid):
             case _:
                 print("ne ta ivedei")
                 continue
-
+def arlygiosios(mas):
+    lsuma = 0
+    for eil in mas:
+        for x in eil:
+            if x == "x" or x == "o":
+                lsuma += 1
+    #print(lsuma)
+    if lsuma == 8:
+        print("**********\nlygiosios\n**********")
+        return False
+    else:
+        return True     #kad neiseitu is ciklo while
+print("zaidimas Kryziukai Nuliukai\n-----------------------")
+masyvopic(m)
 while True:
     print("-----------------------\nDabar zaidejo X ejimas")
     ivedimas(zaidejasx)
@@ -154,8 +167,9 @@ while True:
     masyvopic(m)
     if arlaimejo(m,zaidejaso) == True:
         break
-    # lygiosios cia bus
-
+    # lygiosios cia bus, butu po x jei 9 skaiciuot reiktu, gal ir ten reik, x  paskutinis ejimas
+    if arlygiosios(m) == False:
+        break
 
 
 
